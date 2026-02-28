@@ -1,13 +1,3 @@
-Here is a comprehensive lecture outline on Android Build Tools and Gradle, designed for a technical audience (e.g., students, junior developers, or developers transitioning to Android). The estimated time is 90-120 minutes, including a live demo.
-
----
-
-### Lecture Title: Mastering the Android Build Process: From Source to APK
-
-**Duration:** ~90 minutes (plus 15-30 min Q&A)
-**Objective:** By the end of this lecture, students will understand the role of the Android build pipeline, the architecture of Gradle, and how to configure `build.gradle` files to manage dependencies, build types, and product flavors.
-
----
 
 ### I. Introduction: The Problem of Building Software (5 mins)
 - **The Goal:** Transforming human-readable code (Java/Kotlin/XML) and resources into a single, executable `.apk` or `.aab` file.
