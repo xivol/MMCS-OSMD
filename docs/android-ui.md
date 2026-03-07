@@ -1,5 +1,14 @@
+Here's the updated lecture outline, incorporating the discussion about XML alternatives and the side-by-side code comparison.
 
-### The Android UI Pipeline: From XML to Pixels and the Compose Paradigm Shift
+---
+
+### Lecture Title: The Android UI Pipeline: From XML to Pixels and the Compose Paradigm Shift
+
+**Target Audience:** Intermediate Android developers  
+**Duration:** 60–75 minutes  
+**Objective:** By the end, students will understand the classic UI pipeline (including inflation), the limitations of XML, the pre‑Compose attempts to overcome them, and how Jetpack Compose fundamentally rethinks UI construction.
+
+---
 
 ## Part 1: The Classic View System & Its Challenges (20 min)
 
