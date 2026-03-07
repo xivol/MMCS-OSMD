@@ -43,17 +43,6 @@
 **2.2 Where's the XML? Where's the Inflation?**
 - **The Bold Statement:** **There is no XML, and therefore, there is no Layout Inflation in the traditional sense.**
 - **No `LayoutInflater`:** You are not parsing a file at runtime. You are directly executing Kotlin code.
-- **Example:**
-    ```kotlin
-    // This IS the UI definition. It's just code.
-    @Composable
-    fun Greeting(name: String) {
-        Column {
-            Text("Hello")
-            Text(name)
-        }
-    }
-    ```
 - **Compilation Magic:** The Compose compiler plugin takes this function and transforms it to generate the code necessary for the UI pipeline to run efficiently.
 
 **2.3 The Compose UI Pipeline (3 Phases, Re-imagined)**
@@ -78,20 +67,14 @@
 
 #### Part 3: Comparison & Conclusion (10 mins)
 
-**3.1 Side-by-Side Analogy**
-- **View System:** Like building a dollhouse by reading a manual (XML) and placing each piece of furniture (View) manually, following the instructions every time.
-- **Jetpack Compose:** Like having a skilled miniature maker (the Compose runtime) who you just tell, "I need a cozy living room with a blue couch." They know what to do and will only change the couch if you tell them the color is now red.
-
-**3.2 When to Use What? (Legacy vs. Modern)**
+**3.1 When to Use What? (Legacy vs. Modern)**
 - Existing apps with large codebases in the View system.
 - New apps: Compose is the recommended modern toolkit.
 - Interoperability: You can use Compose inside a View-based app and vice-versa (though this adds complexity).
 
-**3.3 Summary: Key Takeaways**
+**3.2 Summary: Key Takeaways**
 1.  **Inflation** is the process of turning XML into `View` objects at runtime in the classic Android system. It's a necessary but potentially costly step.
 2.  The classic UI pipeline involves **Inflation -> Measure -> Layout -> Draw**.
 3.  **Jetpack Compose bypasses inflation entirely** by defining UI directly in Kotlin.
 4.  The Compose pipeline is **Composition -> Layout -> Drawing**, with the superpower of being able to **skip phases intelligently** thanks to its reactive, state-driven model.
 5.  This shift from an imperative, XML-based system to a declarative, code-based one is the foundation of modern Android UI development.
-
-**Q&A Session**
