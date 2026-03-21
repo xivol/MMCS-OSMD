@@ -3,54 +3,6 @@
 **Instructor Notes – 1.5‑hour session**
 
 ---
-We'll restructure Session 2 to re‑include state hoisting and ViewModel before moving to lists. We'll keep the layout deep dive, then cover state hoisting and ViewModel integration, then essential Material components, then LazyColumn, and finish with best practices. The total slides will be around 20–22, fitting the 1.5‑hour timeframe.
-
----
-
-## Updated Outline: Session 2 – Standard Layouts, State Binding & Essential Material Components
-
-**Total time: 1 hour 30 minutes**
-
-### Part 1: Standard Layouts (30 min)
-1. Recap & Agenda  
-2. Column, Row, Box Revisited  
-3. Arrangement & Alignment in Depth  
-4. Modifier Chaining – Order Matters  
-5. Weight & Align Scoped Modifiers  
-6. ConstraintLayout for Complex Layouts  
-7. Custom Layouts with `Layout` Composable  
-8. Intrinsic Measurements – Why They Matter  
-9. Layout Summary  
-
-### Part 2: State Hoisting & ViewModel (20 min)
-10. State Hoisting – Making Composables Reusable  
-11. Unidirectional Data Flow (UDF)  
-12. Integrating ViewModel with Compose  
-13. `rememberSaveable` – Surviving Process Death  
-14. Derived State with `derivedStateOf`  
-
-### Part 3: Essential Material Components (15 min)
-15. Scaffold – Basic App Structure  
-16. Snackbar – Temporary Messages  
-17. AlertDialog – Modal Dialogs  
-18. Material Theming Recap & Component Customization  
-
-### Part 4: Lists with LazyColumn (15 min)
-19. Efficient Lists – LazyColumn / LazyRow  
-20. Keys, Scroll State, Sticky Headers  
-21. LazyColumn with ViewModel (Quick Demo)  
-
-### Part 5: Best Practices & Wrap-up (10 min)
-22. Layout & Component Best Practices  
-23. Q&A and Resources  
-
----
-
-## Lecture Notes – Session 2 (Final)
-
-**Instructor Notes – 1.5 hours**
-
----
 
 ### Introduction (2 min)
 
