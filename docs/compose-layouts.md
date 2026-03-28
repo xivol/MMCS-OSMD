@@ -274,6 +274,49 @@ Recap: standard layouts, weight, align, ConstraintLayout, custom `Layout` for sp
   ```
 - **Sticky headers**: `stickyHeader { ... }` inside `LazyColumn`.
 
+
+### Slide 21: Recomposition with Mutable Items – Common Pitfall
+
+**The Problem:**
+- Compose tracks state when it is **read**.
+- If you have a `List<MyData>` and you modify `myData.name` inside an item, but the list reference remains the same, Compose doesn't know the data changed because it only observes the list object, not the nested properties.
+- The `LazyColumn` will not recompose those items because it sees the same list reference.
+
+**Example of what doesn't work:**
+```kotlin
+data class Task(var title: String, var completed: Boolean) // mutable class
+
+val tasks = remember { mutableStateListOf(Task("A"), Task("B")) }
+
+LazyColumn {
+    items(tasks) { task ->
+        Text(task.title) // clicking a button that changes task.title won't recompose
+    }
+}
+```
+
+**Why it fails:** `mutableStateListOf` triggers recomposition only when the list itself changes (add/remove/reorder), not when an item's internal fields change.
+
+**Solutions:**
+
+1. **Use immutable data classes** and replace the whole list or specific item when updating:
+   ```kotlin
+   data class Task(val title: String, val completed: Boolean) // immutable
+
+   var tasks by remember { mutableStateOf(listOf(Task("A"), Task("B"))) }
+
+   // When updating:
+   tasks = tasks.map { if (it.title == "A") it.copy(completed = true) else it }
+   ```
+
+2. **Use a `Map` with keys** or store state per item in a separate structure (e.g., `remember { mutableStateMapOf<String, Boolean>() }`).
+
+3. **Use `derivedStateOf` for computed properties** that depend on mutable items, but this still requires the items themselves to be observable.
+
+4. **Wrap each item in a composable that observes its own state** if the data is truly mutable (e.g., each item has its own ViewModel).
+
+**Best practice:** Prefer immutable data classes and replace the entire list or item on update. This aligns with Compose's recomposition model.
+
 ---
 
 ### Slide 21: LazyColumn with ViewModel (5 min)
